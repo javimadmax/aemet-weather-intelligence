@@ -17,3 +17,16 @@ def get_aemet_api_key() -> str:
         )
 
     return api_key
+
+
+def get_station_id() -> str:
+    """Obtiene el identificador de estación configurado."""
+    station_id = os.getenv("AEMET_STATION_ID")
+
+    if not station_id:
+        raise ValueError(
+            "No se ha encontrado AEMET_STATION_ID. "
+            "Añade la estación seleccionada al archivo .env."
+        )
+
+    return station_id

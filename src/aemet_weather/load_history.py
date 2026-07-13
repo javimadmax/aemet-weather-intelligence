@@ -10,7 +10,7 @@ from aemet_weather.load import load_weather_daily
 PROCESSED_DIRECTORY = Path("data/processed/daily_climatology")
 
 
-def main() -> None:
+def main() -> int:
     input_path = get_latest_csv(PROCESSED_DIRECTORY)
 
     print(f"Leyendo archivo procesado: {input_path}")
@@ -30,6 +30,8 @@ def main() -> None:
     print()
     print("Carga completada.")
     print(f"Registros procesados: {loaded_records}")
+
+    return loaded_records
 
 
 if __name__ == "__main__":

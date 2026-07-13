@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 
 
 TEMPLATES_DIRECTORY = Path("reports/templates")
-OUTPUT_DIRECTORY = Path("reports/output")
+OUTPUT_DIRECTORY = Path("docs/reports")
 
 
 def dataframe_first_row_to_dict(
@@ -36,6 +36,7 @@ def create_template_environment() -> Environment:
         loader=FileSystemLoader(TEMPLATES_DIRECTORY),
         autoescape=select_autoescape(["html", "xml"]),
     )
+
 
 def create_temperature_chart(
     daily_dataframe: pd.DataFrame,

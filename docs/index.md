@@ -27,3 +27,9 @@ flowchart LR
     F --> G[Informe HTML]
     E --> H[Machine Learning]
     H --> I[Predicciones]
+
+## Informe meteorológico
+
+El último informe generado puede consultarse aquí:
+
+[Ver informe meteorológico](reports/weather_report.html)

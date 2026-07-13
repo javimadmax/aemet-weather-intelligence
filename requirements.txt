@@ -6,6 +6,7 @@ click==8.4.2
 colorama==0.4.6
 ghp-import==2.1.0
 idna==3.18
+iniconfig==2.3.0
 Jinja2==3.1.6
 Markdown==3.10.2
 MarkupSafe==3.0.3
@@ -20,8 +21,10 @@ paginate==0.5.7
 pandas==3.0.3
 pathspec==1.1.1
 platformdirs==4.10.0
+pluggy==1.6.0
 Pygments==2.20.0
 pymdown-extensions==11.0.1
+pytest==9.1.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.2
 PyYAML==6.0.3

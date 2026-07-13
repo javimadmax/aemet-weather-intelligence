@@ -24,19 +24,29 @@ def calculate_weather_metrics(
         metrics["average_temperature"] = dataframe["tmed"].mean()
 
     if "tmax" in dataframe.columns:
-        metrics["maximum_temperature"] = dataframe["tmax"].max()
+        valid_maximums = dataframe["tmax"].dropna()
 
-        hottest_row = dataframe.loc[dataframe["tmax"].idxmax()]
-        metrics["hottest_date"] = hottest_row.get("fecha")
+        if not valid_maximums.empty:
+            metrics["maximum_temperature"] = valid_maximums.max()
+
+            hottest_index = valid_maximums.idxmax()
+            hottest_row = dataframe.loc[hottest_index]
+
+            metrics["hottest_date"] = hottest_row.get("fecha")
 
         hot_days = dataframe["tmax"].fillna(float("-inf")) >= 30
         metrics["hot_days"] = int(hot_days.sum())
 
     if "tmin" in dataframe.columns:
-        metrics["minimum_temperature"] = dataframe["tmin"].min()
+        valid_minimums = dataframe["tmin"].dropna()
 
-        coldest_row = dataframe.loc[dataframe["tmin"].idxmin()]
-        metrics["coldest_date"] = coldest_row.get("fecha")
+        if not valid_minimums.empty:
+            metrics["minimum_temperature"] = valid_minimums.min()
+
+            coldest_index = valid_minimums.idxmin()
+            coldest_row = dataframe.loc[coldest_index]
+
+            metrics["coldest_date"] = coldest_row.get("fecha")
 
     if "prec" in dataframe.columns:
         metrics["total_precipitation"] = dataframe["prec"].sum()

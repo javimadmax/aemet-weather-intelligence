@@ -125,3 +125,44 @@ El proyecto ya puede convertir los datos meteorológicos descargados en un resum
 ### Próximo paso
 
 Crear pruebas automáticas para comprobar que las transformaciones y métricas funcionan correctamente.
+
+
+## Día 6 — Pruebas automáticas
+
+### Trabajo realizado
+
+* Instalación y configuración de pytest.
+* Creación de pruebas para la transformación de números decimales.
+* Comprobación de la conversión de fechas.
+* Pruebas de detección de temperaturas incoherentes.
+* Pruebas de detección de precipitaciones negativas.
+* Pruebas de detección de registros duplicados.
+* Pruebas de las métricas meteorológicas.
+* Prueba del comportamiento con datos vacíos.
+* Prueba del comportamiento con valores de temperatura ausentes.
+
+### Objetivo de las pruebas
+
+Las pruebas permiten comprobar automáticamente que las transformaciones, validaciones y métricas siguen funcionando después de modificar el proyecto.
+
+### Organización
+
+Las pruebas se encuentran en:
+
+```text
+tests/
+├── test_transform.py
+└── test_metrics.py
+```
+
+### Ejecución
+
+Las pruebas se ejecutan mediante:
+
+```powershell
+pytest
+```
+
+### Próximo paso
+
+Configurar una base de datos PostgreSQL con Docker y diseñar el primer modelo de datos.

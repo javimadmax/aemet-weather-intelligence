@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informe meteorológico</title>
+
+    <style>
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 32px;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2933;
+        }
+
+        header {
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #52616b;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .chart-card {
+            margin-bottom: 32px;
+        }
+
+        .card h2 {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: #52616b;
+        }
+
+        .chart-card h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .table-section {
+            margin-top: 32px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #d9e2ec;
+            text-align: left;
+        }
+
+        th {
+            background: #e9eef2;
+        }
+
+        footer {
+            margin-top: 32px;
+            color: #697782;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Informe meteorológico AEMET</h1>
+
+        <p class="subtitle">
+            Estación {{ summary.station_id }}
+            · {{ summary.start_date }}
+            a {{ summary.end_date }}
+        </p>
+    </header>
+
+    <section class="metrics">
+        <article class="card">
+            <h2>Temperatura media</h2>
+
+            <p>
+                {{ summary.average_temperature_c }} °C
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Temperatura máxima</h2>
+
+            <p>
+                {{ summary.maximum_temperature_c }} °C
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Temperatura mínima</h2>
+
+            <p>
+                {{ summary.minimum_temperature_c }} °C
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Precipitación acumulada</h2>
+
+            <p>
+                {{ summary.total_precipitation_mm }} mm
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Días con lluvia</h2>
+
+            <p>
+                {{ summary.rainy_days }}
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Días calurosos</h2>
+
+            <p>
+                {{ summary.hot_days }}
+            </p>
+        </article>
+    </section>
+
+    <section class="card chart-card">
+        <h2>Evolución diaria de temperaturas</h2>
+
+        {{ temperature_chart | safe }}
+    </section>
+
+    <section class="table-section">
+        <h2>Días extremos</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Fecha</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for row in extreme_days %}
+                <tr>
+                    <td>{{ row.metric }}</td>
+                    <td>{{ row.observation_date }}</td>
+                    <td>{{ row.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        Datos procedentes de AEMET OpenData.
+    </footer>
+</body>
+</html>

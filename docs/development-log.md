@@ -200,3 +200,49 @@ Los nombres originales de AEMET se transforman a nombres descriptivos antes de c
 ### Próximo paso
 
 Crear una transformación específica para el modelo SQL y cargar los primeros registros en PostgreSQL.
+
+
+## Día 8 — Pipeline completo e informe HTML
+
+### Trabajo realizado
+
+* Integración de la descarga desde AEMET.
+* Transformación de los datos crudos.
+* Carga incremental en PostgreSQL.
+* Ejecución de consultas SQL analíticas.
+* Generación de un informe HTML.
+* Inclusión de métricas meteorológicas.
+* Inclusión de un gráfico interactivo de temperaturas.
+* Creación de un único comando para ejecutar todo el proceso.
+
+### Ejecución del pipeline
+
+El proceso completo se ejecuta con:
+
+```powershell
+python -m aemet_weather.pipeline
+```
+
+### Flujo implementado
+
+```text
+AEMET OpenData
+    ↓
+JSON crudo
+    ↓
+Transformación con pandas
+    ↓
+PostgreSQL
+    ↓
+Consultas SQL
+    ↓
+Informe HTML con Plotly
+```
+
+### Resultado
+
+El proyecto ya dispone de un pipeline funcional de principio a fin.
+
+### Próximo paso
+
+Automatizar la ejecución diaria y registrar el estado de cada ejecución.

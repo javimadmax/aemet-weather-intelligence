@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informe meteorológico</title>
+
+    <style>
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 32px;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2933;
+        }
+
+        header {
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #52616b;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .chart-card {
+            margin-bottom: 32px;
+        }
+
+        .card h2 {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: #52616b;
+        }
+
+        .chart-card h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .table-section {
+            margin-top: 32px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #d9e2ec;
+            text-align: left;
+        }
+
+        th {
+            background: #e9eef2;
+        }
+
+        footer {
+            margin-top: 32px;
+            color: #697782;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Informe meteorológico AEMET</h1>
+
+        <p class="subtitle">
+            Estación 3194Y
+            · 2026-06-13
+            a 2026-07-10
+        </p>
+    </header>
+
+    <section class="metrics">
+        <article class="card">
+            <h2>Temperatura media</h2>
+
+            <p>
+                27.79 °C
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Temperatura máxima</h2>
+
+            <p>
+                40.0 °C
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Temperatura mínima</h2>
+
+            <p>
+                15.5 °C
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Precipitación acumulada</h2>
+
+            <p>
+                24.4 mm
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Días con lluvia</h2>
+
+            <p>
+                5
+            </p>
+        </article>
+
+        <article class="card">
+            <h2>Días calurosos</h2>
+
+            <p>
+                28
+            </p>
+        </article>
+    </section>
+
+    <section class="card chart-card">
+        <h2>Evolución diaria de temperaturas</h2>
+
+        <div style="height:100%; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="90a17307-1cde-473f-96e4-cf202a2883e8" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("90a17307-1cde-473f-96e4-cf202a2883e8")) {                    Plotly.newPlot(                        "90a17307-1cde-473f-96e4-cf202a2883e8",                        [{"mode":"lines+markers","name":"Temperatura m\u00ednima","x":["2026-06-13","2026-06-14","2026-06-15","2026-06-16","2026-06-17","2026-06-18","2026-06-19","2026-06-20","2026-06-21","2026-06-22","2026-06-23","2026-06-24","2026-06-25","2026-06-26","2026-06-27","2026-06-28","2026-06-29","2026-06-30","2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05","2026-07-06","2026-07-07","2026-07-08","2026-07-09","2026-07-10"],"y":{"dtype":"f8","bdata":"zczMzMzML0CamZmZmZkxQAAAAAAAAC9AzczMzMxMMUAzMzMzM7M0QGZmZmZmZjNAzczMzMzMMUDNzMzMzEw2QDMzMzMzszdAMzMzMzMzOEBmZmZmZuY1QDMzMzMzMzVAmpmZmZmZMkAzMzMzMzMwQAAAAAAAgDBAzczMzMzMMkAAAAAAAAA0QDMzMzMzMzVAZmZmZmbmNkAzMzMzM7MwQGZmZmZm5jNAZmZmZmZmNkAAAAAAAIA2QJqZmZmZmTdAAAAAAACAM0CamZmZmRkwQDMzMzMzszBAMzMzMzOzNEA="},"type":"scatter"},{"mode":"lines+markers","name":"Temperatura media","x":["2026-06-13","2026-06-14","2026-06-15","2026-06-16","2026-06-17","2026-06-18","2026-06-19","2026-06-20","2026-06-21","2026-06-22","2026-06-23","2026-06-24","2026-06-25","2026-06-26","2026-06-27","2026-06-28","2026-06-29","2026-06-30","2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05","2026-07-06","2026-07-07","2026-07-08","2026-07-09","2026-07-10"],"y":{"dtype":"f8","bdata":"MzMzMzMzOECamZmZmRk6QGZmZmZmZjdAMzMzMzMzOUCamZmZmZk7QM3MzMzMzDpAAAAAAACAOkAAAAAAAIA9QGZmZmZm5j5AmpmZmZmZP0CamZmZmZk+QM3MzMzMTD1AzczMzMzMOEDNzMzMzEw4QJqZmZmZmTlAAAAAAAAAO0AAAAAAAAA7QAAAAAAAAD1AAAAAAACAPkCamZmZmZk5QJqZmZmZGTxAZmZmZmZmPkDNzMzMzEw+QJqZmZmZmT9AzczMzMzMPUCamZmZmRk7QJqZmZmZGTtAzczMzMxMPEA="},"type":"scatter"},{"mode":"lines+markers","name":"Temperatura m\u00e1xima","x":["2026-06-13","2026-06-14","2026-06-15","2026-06-16","2026-06-17","2026-06-18","2026-06-19","2026-06-20","2026-06-21","2026-06-22","2026-06-23","2026-06-24","2026-06-25","2026-06-26","2026-06-27","2026-06-28","2026-06-29","2026-06-30","2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05","2026-07-06","2026-07-07","2026-07-08","2026-07-09","2026-07-10"],"y":{"dtype":"f8","bdata":"AAAAAABAQEDNzMzMzExBQGZmZmZmZj9AzczMzMyMQEAAAAAAAEBBQGZmZmZmJkFAmpmZmZmZQUCamZmZmVlCQM3MzMzMDENAMzMzMzNzQ0CamZmZmZlDQDMzMzMzs0JAmpmZmZkZP0AzMzMzMzNAQM3MzMzMTEFAzczMzMyMQUAAAAAAAABBQDMzMzMzc0JAzczMzMwMQ0AAAAAAAEBBQGZmZmZmJkJAZmZmZmYmQ0DNzMzMzAxDQAAAAAAAwENAAAAAAAAAREDNzMzMzAxDQAAAAAAAwEJAMzMzMzPzQUA="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Evoluci\u00f3n diaria de temperaturas"},"xaxis":{"title":{"text":"Fecha"}},"yaxis":{"title":{"text":"Temperatura (\u00b0C)"}},"hovermode":"x unified"},                        {"responsive": true}                    )                };            </script>        </div>
+    </section>
+
+    <section class="table-section">
+        <h2>Días extremos</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Fecha</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+                <tr>
+                    <td>hottest_day</td>
+                    <td>2026-07-07</td>
+                    <td>40.0</td>
+                </tr>
+                
+                <tr>
+                    <td>rainiest_day</td>
+                    <td>2026-06-14</td>
+                    <td>12.8</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        Datos procedentes de AEMET OpenData.
+    </footer>
+</body>
+</html>

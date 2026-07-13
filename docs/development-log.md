@@ -92,3 +92,36 @@ Crear las primeras métricas meteorológicas:
 * Temperatura mínima.
 * Precipitación acumulada.
 * Número de días con lluvia.
+
+
+## Día 5 — Primer análisis meteorológico
+
+### Trabajo realizado
+
+* Lectura del último archivo CSV procesado.
+* Creación de un módulo independiente de métricas.
+* Cálculo del periodo analizado.
+* Cálculo de la temperatura media.
+* Identificación de la temperatura máxima.
+* Identificación del día más caluroso.
+* Identificación de la temperatura mínima.
+* Identificación del día más frío.
+* Cálculo de la precipitación acumulada.
+* Cálculo del número de días con lluvia.
+* Cálculo del número de días con temperaturas máximas de 30 °C o más.
+
+### Decisiones tomadas
+
+La lógica de cálculo se ha separado de la lógica de presentación.
+
+El archivo `metrics.py` contiene los cálculos, mientras que `analyze_history.py` se encarga de leer los datos y mostrar los resultados.
+
+Esta separación permitirá reutilizar las métricas en futuros informes HTML, pruebas automáticas y aplicaciones web.
+
+### Resultado
+
+El proyecto ya puede convertir los datos meteorológicos descargados en un resumen analítico comprensible.
+
+### Próximo paso
+
+Crear pruebas automáticas para comprobar que las transformaciones y métricas funcionan correctamente.

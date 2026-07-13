@@ -30,3 +30,28 @@ def get_station_id() -> str:
         )
 
     return station_id
+
+def get_required_environment_variable(name: str) -> str:
+    """Obtiene una variable obligatoria del entorno."""
+    value = os.getenv(name)
+
+    if not value:
+        raise ValueError(
+            f"No se ha encontrado la variable de entorno {name}."
+        )
+
+    return value
+
+
+def get_database_url() -> str:
+    """Construye la URL de conexión con PostgreSQL."""
+    database = get_required_environment_variable("POSTGRES_DB")
+    user = get_required_environment_variable("POSTGRES_USER")
+    password = get_required_environment_variable("POSTGRES_PASSWORD")
+    host = get_required_environment_variable("POSTGRES_HOST")
+    port = get_required_environment_variable("POSTGRES_PORT")
+
+    return (
+        f"postgresql+psycopg://{user}:{password}"
+        f"@{host}:{port}/{database}"
+    )

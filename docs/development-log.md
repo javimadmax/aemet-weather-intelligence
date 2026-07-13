@@ -166,3 +166,37 @@ pytest
 ### Próximo paso
 
 Configurar una base de datos PostgreSQL con Docker y diseñar el primer modelo de datos.
+
+## Día 7 — Base de datos PostgreSQL
+
+### Trabajo realizado
+
+* Creación de un contenedor PostgreSQL con Docker.
+* Configuración de credenciales mediante variables de entorno.
+* Creación de un volumen persistente.
+* Creación de la base de datos `aemet_weather`.
+* Diseño de la tabla `weather_daily`.
+* Ejecución del esquema SQL.
+* Instalación de SQLAlchemy y psycopg.
+* Creación de una conexión entre Python y PostgreSQL.
+* Comprobación automática de la conexión.
+
+### Decisiones técnicas
+
+PostgreSQL se ejecuta dentro de Docker para evitar una instalación manual y conseguir un entorno reproducible.
+
+Las credenciales se almacenan en el archivo `.env` y no se incluyen en Git.
+
+La tabla utiliza como clave primaria la combinación de:
+
+```text
+station_id + observation_date
+```
+
+Esto evita almacenar más de una observación diaria de la misma estación.
+
+Los nombres originales de AEMET se transforman a nombres descriptivos antes de cargar los datos en la base de datos.
+
+### Próximo paso
+
+Crear una transformación específica para el modelo SQL y cargar los primeros registros en PostgreSQL.
